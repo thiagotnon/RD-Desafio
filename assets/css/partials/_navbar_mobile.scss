@@ -1,0 +1,123 @@
+#btn-mobile {
+  display: none;
+}
+@media (max-width: 768px) {
+  #btn-mobile {
+    display: flex;
+    height: 22px;
+    margin-top: 0.2rem;
+    font-size: 1rem;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
+    #burger {
+      height: 4px;
+      background-color: $blue_var_two;
+      width: 26px;
+      border-radius: 2px;
+
+      &::after,
+      &::before {
+        content: '';
+        display: block;
+        width: 26px;
+        height: 4px;
+        background-color: $blue_var_two;
+        transition: 0.3s;
+        position: relative;
+        border-radius: 2px;
+      }
+      &::after {
+        margin-top: 4px;
+      }
+      &::before {
+        margin-top: 8px;
+      }
+    }
+  }
+
+  #nav.active #burger {
+    height: 0;
+    &::after {
+      transform: rotate(-135deg);
+      top: -7px;
+    }
+    &::before {
+      transform: rotate(135deg);
+    }
+  }
+  .btn-group {
+    display: none;
+  }
+
+  #nav.active {
+    #menu {
+      height: calc(100vh - 70px);
+      visibility: visible;
+      overflow-y: auto;
+      display: block;
+      z-index: 1000;
+      background-color: $white;
+
+      .btn-group {
+        display: flex;
+        left: 0;
+        margin: 0;
+        padding: 2rem;
+        visibility: visible;
+        align-items: center;
+        justify-content: center;
+        background-color: $gray_var_five;
+        border-top: 1px solid $gray_var_four;
+        transition: 0.6s;
+      }
+    }
+  }
+  #menu {
+    left: 0;
+    top: 100%;
+    position: absolute;
+    z-index: 20;
+    display: none;
+    width: 100%;
+
+    ul {
+      display: block;
+      width: 100%;
+      flex-flow: wrap row;
+      padding: 01rem;
+
+      li {
+        padding: 0.5rem;
+        border-bottom: 1px solid $gray_var_four;
+        &:last-child {
+          border-bottom: 0;
+        }
+
+        &[data-dropdown] {
+          &:hover,
+          &.active {
+            .dropdown-menu {
+              position: absolute;
+              display: block;
+              position: static;
+              min-width: 100%;
+              padding: 0;
+              ul {
+                margin: 0;
+                gap: 0;
+                h5 {
+                  margin: 0;
+                }
+                li {
+                  margin: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

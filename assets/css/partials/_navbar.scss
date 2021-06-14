@@ -1,0 +1,141 @@
+#header {
+  display: flex;
+  height: 70px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid $gray_var_four;
+  background-color: $white;
+  font-family: $nunito;
+  font-weight: bold;
+  padding: 1rem;
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .btn-primary {
+    display: flex;
+    align-items: center;
+    img {
+      padding-left: 0.5rem;
+    }
+  }
+
+  #logo {
+    display: flex;
+  }
+
+  #nav {
+    display: flex;
+    align-items: center;
+  }
+
+  #menu {
+    display: flex;
+    gap: 0.5rem;
+    font-family: $nunito;
+    align-items: center;
+    .btn-group {
+      gap: 1rem;
+    }
+
+    ul {
+      display: flex;
+      align-items: center;
+      gap: 4rem;
+      li {
+        a {
+          display: block;
+          padding: 0.5rem;
+          color: $black;
+        }
+
+        &[data-dropdown] {
+          position: relative;
+          &::after {
+            content: url('../../assets/img/icons/down.svg');
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            right: -10px;
+            top: 42%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+          }
+          .dropdown-menu {
+            display: none;
+          }
+
+          &:hover,
+          &.active {
+            .dropdown-menu {
+              top: 100%;
+              left: -45px;
+              z-index: 1;
+              padding: 1rem;
+              position: absolute;
+              background-color: $white;
+              display: grid;
+              box-shadow: 0px 8px 18px rgba(33, 36, 41, 0.16);
+              border-radius: 2px;
+              grid-template-columns: repeat(3, 1fr);
+              align-items: flex-start;
+              min-width: 800px;
+              width: 100%;
+              animation: show-down 0.3s forwards;
+            }
+          }
+
+          @keyframes show-down {
+            from {
+              opacity: 0;
+              transform: translate3d(0, -30px, 0);
+            }
+            to {
+              opacity: 1;
+              transform: translate3d(0, 0, 0);
+            }
+          }
+
+          .sub-menu {
+            width: 100%;
+            display: flex;
+            flex-flow: wrap row;
+            padding: 1rem;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+
+            h5 {
+              text-transform: uppercase;
+              font: 1.125rem $darker;
+              color: $blue_var_two;
+              border-bottom: 1px solid $gray_var_four;
+              width: 100%;
+              padding-bottom: 1rem;
+              margin-bottom: 0.5rem;
+            }
+            li {
+              display: block;
+              width: 100%;
+              a {
+                font: 400 $body_sm $nunito;
+                padding: 0.5rem 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  @import './navbar_mobile';
+}

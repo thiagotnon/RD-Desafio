@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@800;900&family=Nunito+Sans:wght@400;700&display=swap');
+
+$darker: 'Darker Grotesque', sans-serif;
+$nunito: 'Nunito Sans', sans-serif;
+
+$h1_desk: 3.5rem;
+$h2_desk: 2.5rem;
+$h3_desk: 2rem;
+$h4_desk: 1.5rem;
+$h5_desk: 1.25rem;
+$h6_desk: 0.875rem;
+
+$headings_desk: (
+  h1: $h1_desk,
+  h2: $h2_desk,
+  h3: $h3_desk,
+  h4: $h4_desk,
+  h5: $h5_desk,
+  h6: $h6_desk,
+);
+
+$h1_mob: 2.5rem;
+$h2_mob: 2rem;
+$h3_mob: 1.5rem;
+$h4_mob: 1.25rem;
+$h5_mob: 1rem;
+$h6_mob: 0.875rem;
+// List of headings
+$headings_mob: (
+  h1: $h1_mob,
+  h2: $h2_mob,
+  h3: $h3_mob,
+  h4: $h4_mob,
+  h5: $h5_mob,
+  h6: $h6_mob,
+);
+
+@each $heading, $size in $headings_desk {
+  $i: index($headings_desk, $heading $size);
+
+  $blackBold: if($i == 4, 800, 900);
+  $font: if($i == 5 or $i == 6, $nunito, $darker);
+
+  #{$heading} {
+    font: $size $font;
+    margin-bottom: 2rem;
+    @if ($i == 3 or $i == 4) {
+      font-weight: if($i == 4, 800, 900);
+      line-height: 110%;
+    } @else if($i == 5) {
+      font-weight: 400;
+      line-height: 140%;
+    } @else if($i == 6) {
+      font-weight: 400;
+      line-height: 120%;
+    } @else {
+      font-weight: 900;
+      line-height: 100%;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  @each $heading, $size in $headings_mob {
+    $i: index($headings_mob, $heading $size);
+
+    $blackBold: if($i == 4, 800, 900);
+    $font: if($i == 5 or $i == 6, $nunito, $darker);
+
+    #{$heading} {
+      font: $size $font;
+      @if ($i == 3 or $i == 4) {
+        font-weight: if($i == 4, 800, 900);
+        line-height: 110%;
+      } @else if($i == 5) {
+        font-weight: 400;
+        line-height: 140%;
+      } @else if($i == 6) {
+        font-weight: 400;
+        line-height: 120%;
+      } @else {
+        font-weight: 900;
+        line-height: 100%;
+      }
+    }
+  }
+}
+
+$body_lg: 1.25rem;
+$body_md: 1rem;
+$body_sm: 0.875rem;
+
+p {
+  font: $body_md $nunito;
+}

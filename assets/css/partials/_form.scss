@@ -1,0 +1,102 @@
+.form {
+  background-color: $white;
+  box-shadow: 0px 4px 12px rgba(33, 36, 41, 0.14);
+  border-radius: 2px;
+  padding: 1.5rem;
+
+  header {
+    border-bottom: 1px solid $gray_var_four;
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    h4 {
+      color: $black;
+      margin-bottom: 1rem;
+    }
+    p {
+      color: $gray_var_two;
+    }
+  }
+  .input-group {
+    margin-bottom: 0.5rem;
+    width: 100%;
+    position: relative;
+    .show-hide-pass {
+      background: url('../../assets/img/rd/eye-op.svg') no-repeat;
+      cursor: pointer;
+      float: right;
+      margin-left: -55px;
+      margin-right: 10px;
+      position: relative;
+      z-index: 2;
+      cursor: pointer;
+      width: 20px;
+      height: 20px;
+      bottom: 0;
+      margin-top: 0.6rem;
+      &.active {
+        background: url('../../assets/img/rd/eye-cs.svg') no-repeat;
+      }
+    }
+
+    span {
+      font: 900 $body_md $nunito;
+    }
+
+    label {
+      padding-bottom: 0.5rem;
+      display: inline-block;
+      font: 900 $body_md $nunito;
+      position: relative;
+    }
+
+    input[type='text'],
+    input[type='url'],
+    input[type='password'] {
+      padding: 0.625rem 0.75rem;
+      border: 2px solid $black;
+      width: 100%;
+      box-shadow: inset 4px 4px #e3f7f8;
+      width: 100%;
+    }
+
+    .select {
+      padding: 0.625rem 0.75rem;
+      border: 2px solid $black;
+      width: 100%;
+      box-shadow: inset 4px 4px #e3f7f8;
+      cursor: pointer;
+    }
+
+    input[type='password'] {
+      position: relative;
+    }
+  }
+
+  .obs {
+    font: $body_sm $nunito;
+    color: $gray_var_two;
+    margin-bottom: 1.8rem;
+
+    ul {
+      list-style-type: disc;
+      padding-left: 1.2rem;
+
+      li {
+        margin-bottom: 0.5rem;
+        a {
+          color: $blue_var_two;
+          text-decoration: underline;
+          transition: opacity 0.2s;
+          &:hover {
+            opacity: 0.6;
+          }
+        }
+      }
+    }
+  }
+
+  button {
+    width: 100%;
+  }
+}

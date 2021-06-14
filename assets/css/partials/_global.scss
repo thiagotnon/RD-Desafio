@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+img {
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+span.span_error {
+  margin-top: 0.2rem;
+  color: red;
+  font: 400 $body_sm $nunito !important;
+  display: block;
+}
