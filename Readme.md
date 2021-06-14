@@ -1,7 +1,7 @@
 
 Desktop           |  Mobile
 :-------------------------:|:-------------------------:
-![Badge](.github/desktop.gif)  |  ![Badge](.github/desktop.gif) 
+![Badge](.github/desktop.gif)  |  ![Badge](.github/mobile.gif) 
 
 ## 💻 Projeto
 
